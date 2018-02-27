@@ -235,7 +235,7 @@ contact:
 #            options:
 #                required: false
 #                label: Do you own a pet?
-#                choices: [ Yes, No ]
+#                choices: { 'Yes': 'yes', 'No': 'no' }
 #                multiple: false
 #        cutest_pet:
 #            type: choice
