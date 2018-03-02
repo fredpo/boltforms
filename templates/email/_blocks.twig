@@ -29,7 +29,15 @@
 {% endblock %}
 
 {% block field_value %}
-    {{- value }}
+    {% if field.options.choices|length>0 %}
+        {% for choice_name, choice_value in field.options.choices %}
+            {% if value==choice_value %}
+                {{ choice_name }}
+            {% endif %} 
+        {% endfor %}
+    {% else %}
+        {{ value }}
+    {% endif %}
 {% endblock %}
 
 {% block field_date %}
